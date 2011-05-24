@@ -1,0 +1,22 @@
+one:
+  codigo: MyString
+  longitud: 1
+  descripcion: MyString
+
+two:
+  codigo: MyString
+  longitud: 1
+  descripcion: MyString
+
+# == Schema Information
+#
+# Table name: hornos
+#
+#  id          :integer         not null, primary key
+#  codigo      :string(255)
+#  longitud    :integer
+#  descripcion :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

@@ -1,0 +1,11 @@
+one:
+  quemador_id: MyString
+  temperatura: 1
+  presion: 1
+  fecha: 2011-05-23 17:29:30
+
+two:
+  quemador_id: MyString
+  temperatura: 1
+  presion: 1
+  fecha: 2011-05-23 17:29:30

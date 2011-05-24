@@ -1,0 +1,30 @@
+- title "Horno"
+
+%p
+  %strong Codigo:
+  = @horno.codigo
+%p
+  %strong Longitud:
+  = @horno.longitud
+%p
+  %strong Descripcion:
+  = @horno.descripcion
+#quemador
+  %table
+    %thead
+      %tr
+        %th Quemadores
+        %th Cantidad de mecheros
+        %th Posición
+    %tbody
+      -for quemador in @horno.quemadores
+        %tr
+          %td= quemador.nombre
+          %td= quemador.cantidad_mecheros
+          %td= quemador.posicion
+%p
+  = link_to "Edit", edit_horno_path(@horno)
+  |
+  = link_to "Destroy", @horno, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", hornos_path

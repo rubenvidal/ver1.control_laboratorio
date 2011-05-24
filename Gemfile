@@ -6,12 +6,14 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'nested_form'
 
 #gem 'kaminari'
 gem 'haml-rails'
-#gem 'jquery-rails', '>= 0.2.6'
+gem 'jquery-rails', '>= 0.2.6'
 group :development, :test do
   gem 'rspec-rails'
+  gem 'annotate'
   gem 'capybara'
   gem 'spork', '0.9.0.rc4'
 end
@@ -44,3 +46,4 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test

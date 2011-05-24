@@ -1,4 +1,13 @@
 ControlLaboratorio::Application.routes.draw do
+  resources :mediciones
+
+  resources :hornos do
+    member do
+      get :nuevas_mediciones
+      post :crear_mediciones
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

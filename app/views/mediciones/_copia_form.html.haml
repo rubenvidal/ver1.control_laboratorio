@@ -1,0 +1,20 @@
+= form_for @medicion do |f|
+  = f.error_messages
+  %p
+    = f.label :quemador_id
+    %br
+    = f.text_field :quemador_id
+  %p
+    = f.label :temperatura
+    %br
+    = f.text_field :temperatura
+  %p
+    = f.label :presion
+    %br
+    = f.text_field :presion
+  %p
+    = f.label :fecha
+    %br
+    = f.datetime_select :fecha
+  %p
+    = f.submit

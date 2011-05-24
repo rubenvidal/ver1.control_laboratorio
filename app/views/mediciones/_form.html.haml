@@ -1,0 +1,7 @@
+= nested_form_for @horno do |f|
+  = f.error_messages
+  %p
+    =f.label :codigo
+    -f.fields_for :mediciones do |builder|
+      =render 'medicion_fields', :f => builder
+    = f.submit
