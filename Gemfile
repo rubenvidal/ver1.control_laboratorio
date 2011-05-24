@@ -1,29 +1,33 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'nested_form'
 
-#gem 'kaminari'
 gem 'haml-rails'
 gem 'jquery-rails', '>= 0.2.6'
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'annotate'
-  gem 'capybara'
-  gem 'spork', '0.9.0.rc4'
-end
+
+gem 'nested_form'
+#gem 'kaminari'
 
 group :development do
   gem 'wirble'
   gem 'hirb'
   gem 'awesome_print'
   gem 'nifty-generators'
+  gem 'annotate'
 end
+
+#group :development, :test do
+  #gem 'rspec-rails'
+  #gem 'capybara'
+  #gem "mocha"
+  #gem 'spork', '0.9.0.rc4'
+#end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -46,4 +50,3 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "mocha", :group => :test
