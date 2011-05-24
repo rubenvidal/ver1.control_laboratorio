@@ -1,7 +1,6 @@
 class Medicion < ActiveRecord::Base
 
   belongs_to :quemador
-  belongs_to :horno
 
   validates_presence_of :temperatura, :presion, :fecha
 

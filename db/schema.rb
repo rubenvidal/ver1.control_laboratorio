@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524093943) do
+ActiveRecord::Schema.define(:version => 20110523151221) do
 
   create_table "hornos", :force => true do |t|
     t.string   "codigo"
@@ -21,13 +21,12 @@ ActiveRecord::Schema.define(:version => 20110524093943) do
   end
 
   create_table "mediciones", :force => true do |t|
-    t.string   "quemador_id"
+    t.integer  "quemador_id"
     t.integer  "temperatura"
     t.integer  "presion"
     t.datetime "fecha"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "horno_id"
   end
 
   create_table "quemadores", :force => true do |t|

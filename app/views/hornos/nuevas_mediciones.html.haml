@@ -14,8 +14,8 @@
     Fecha:
     = Date.today
 
-  = f.fields_for :mediciones do |builder|
-    = render 'medicion_fields', :f => builder
+  = f.fields_for :mediciones do |medicion_fields|
+    = render  'medicion_fields', :medicion_fields => medicion_fields
   %p
     = f.submit
 

@@ -22,12 +22,13 @@ class HornosController < ApplicationController
   end
 
   def nuevas_mediciones
-    if @horno.mediciones.where(:fecha => Date.today).empty?
+    if @horno.mediciones.where(:fecha => Date.today.to_datetime).empty?
         @horno.quemadores.each do |quemador|
-          @horno.mediciones.build(
+          #quemador.mediciones << Medicion.new(:fecha => Date.today, :presion => 10)
+          quemador.mediciones.create(
             :fecha => Date.today,
-            :presion => 10,
-            :quemador => quemador)
+            :presion => 10, :temperatura => 20
+        )
       end
     end
   end
