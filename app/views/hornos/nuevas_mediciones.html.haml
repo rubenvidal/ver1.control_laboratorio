@@ -1,0 +1,21 @@
+%h2
+  Nuevas mediciones en horno
+  = @horno.codigo
+
+= nested_form_for @horno do |f|
+  = f.error_messages
+  %p
+    Código:
+    = @horno.codigo
+  %p
+    Longitud:
+    = @horno.longitud
+  %p
+    Fecha:
+    = Date.today
+
+  = f.fields_for :mediciones do |builder|
+    = render 'medicion_fields', :f => builder
+  %p
+    = f.submit
+

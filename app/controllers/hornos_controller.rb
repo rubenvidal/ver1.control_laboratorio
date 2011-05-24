@@ -1,10 +1,11 @@
 class HornosController < ApplicationController
+  before_filter :find_horno, :only => [:show, :edit, :update, :destroy, :nuevas_mediciones, :crear_mediciones]
+
   def index
     @hornos = Horno.all
   end
 
   def show
-    @horno = Horno.find(params[:id])
   end
 
   def new
@@ -21,19 +22,23 @@ class HornosController < ApplicationController
   end
 
   def nuevas_mediciones
-    @horno = Horno.find(params[:id])
+    if @horno.mediciones.where(:fecha => Date.today).empty?
+        @horno.quemadores.each do |quemador|
+          @horno.mediciones.build(
+            :fecha => Date.today,
+            :presion => 10,
+            :quemador => quemador)
+      end
+    end
   end
 
   def crear_mediciones
-    @horno = Horno.find(params[:id])
   end
 
   def edit
-    @horno = Horno.find(params[:id])
   end
 
   def update
-    @horno = Horno.find(params[:id])
     if @horno.update_attributes(params[:horno])
       redirect_to @horno, :notice  => "Successfully updated horno."
     else
@@ -42,8 +47,13 @@ class HornosController < ApplicationController
   end
 
   def destroy
-    @horno = Horno.find(params[:id])
     @horno.destroy
     redirect_to hornos_url, :notice => "Successfully destroyed horno."
   end
+
+  private
+    def find_horno
+      @horno = Horno.find(params[:id])
+    end
+
 end

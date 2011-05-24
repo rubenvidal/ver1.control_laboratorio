@@ -1,7 +1,13 @@
 class Medicion < ActiveRecord::Base
-  attr_accessible :quemador_id, :temperatura, :presion, :fecha
+
   belongs_to :quemador
+  belongs_to :horno
+
   validates_presence_of :temperatura, :presion, :fecha
+
+  attr_accessible :quemador_id, :temperatura, :presion, :fecha, :horno_id, :quemador
+
+
 end
 
 
